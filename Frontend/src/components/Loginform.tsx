@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Link } from "react-router-dom"
 export default function LoginForm({
   className,
   ...props
@@ -23,13 +24,22 @@ export default function LoginForm({
             </a>
             <h1 className="text-xl font-bold items-center justify-center">Welcome to Skin Cure</h1>
             <div className="text-center text-sm">
-              Don&apos;t have an account?{" "}
-              <a href="#" className="underline underline-offset-4">
-                Sign up
-              </a>
+              Already have an account?{" "}
+              <Link to="/signin" className="underline underline-offset-4 text-black font-bold">
+                Sign in
+              </Link>
             </div>
           </div>
           <div className="flex flex-col gap-6">
+            <div className="grid gap-3">
+              <Label htmlFor="Name">Name</Label>
+              <Input
+                id="Name"
+                type="text"
+                placeholder="Full Name"
+                required
+              />
+            </div>
             <div className="grid gap-3">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -39,8 +49,17 @@ export default function LoginForm({
                 required
               />
             </div>
+            <div className="grid gap-3">
+              <Label htmlFor="email">Password</Label>
+              <Input
+                id="password"
+                type="Password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
             <Button type="submit" className="w-full">
-              Login
+              Register
             </Button>
           </div>
           <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
@@ -70,10 +89,6 @@ export default function LoginForm({
           </div>
         </div>
       </form>
-      {/* <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
-        By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
-        and <a href="#">Privacy Policy</a>.
-      </div> */}
     </div>
   )
 }
