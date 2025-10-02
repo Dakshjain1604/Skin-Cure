@@ -1,0 +1,30 @@
+[project]
+name = "ml-fastapi-genai"
+version = "0.1.0"
+description = "ML + FastAPI + GenAI project"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "python-multipart",
+    "pillow",
+    "torch",
+    "transformers",
+    "huggingface-hub",
+    "redis",
+    "python-jose[cryptography]",
+    "python-dotenv",
+    "opencv-python",
+    "numpy"
+]
+
+[tool.uv]
+# uv settings (optional)
+dev-dependencies = [
+    "pytest",
+    "httpx",        # for testing FastAPI endpoints
+    "black",        # formatter
+    "ruff"          # linter
+]
