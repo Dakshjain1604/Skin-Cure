@@ -1,4 +1,4 @@
-## HIGH LEVEL WORKFLOW
+## HIGH LEVEL WORKFLOW of the project
 
 1. User uploads skin photo (React frontend).
 
